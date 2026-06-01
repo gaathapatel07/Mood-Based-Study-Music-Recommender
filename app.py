@@ -3,6 +3,65 @@ import streamlit as st
 from sklearn.preprocessing import LabelEncoder
 from sklearn.tree import DecisionTreeClassifier
 
+st.markdown("""
+<style>
+
+.stApp{
+    background: linear-gradient(135deg,#0f172a,#111827);
+}
+
+.main-title{
+    text-align:center;
+    color:white;
+    font-size:3rem;
+    font-weight:800;
+    margin-bottom:0px;
+}
+
+.subtitle{
+    text-align:center;
+    color:#94a3b8;
+    margin-bottom:30px;
+}
+
+.music-card{
+    background: rgba(30,41,59,0.85);
+    padding:25px;
+    border-radius:20px;
+    border:1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(15px);
+    text-align:center;
+    margin-top:20px;
+}
+
+.music-title{
+    color:#22c55e;
+    font-size:28px;
+    font-weight:bold;
+}
+
+.music-subtitle{
+    color:white;
+    font-size:18px;
+}
+
+.stButton>button{
+    width:100%;
+    background:#22c55e;
+    color:white;
+    border:none;
+    border-radius:12px;
+    height:3.2em;
+    font-size:18px;
+    font-weight:bold;
+}
+
+.stButton>button:hover{
+    background:#16a34a;
+}
+
+</style>
+""", unsafe_allow_html=True)
 # -----------------------------
 # Page Configuration
 # -----------------------------
@@ -71,7 +130,23 @@ playlist_links = {
 # -----------------------------
 # UI
 # -----------------------------
-st.title("🎧 Mood-Based Study Music Recommender")
+st.markdown(
+    """
+    <div class='main-title'>
+    🎧 Mood Music AI
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
+st.markdown(
+    """
+    <div class='subtitle'>
+    Discover your perfect study soundtrack
+    </div>
+    """,
+    unsafe_allow_html=True
+)
 
 st.markdown(
     """
