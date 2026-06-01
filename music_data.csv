@@ -1,0 +1,21 @@
+Mood,Task,Energy,Recommendation
+Happy,Coding,8,Deep Focus Electronic
+Happy,Reading,6,Lo-Fi Beats
+Happy,Writing,7,Instrumental Jazz
+Happy,Exam Prep,8,Ambient Focus
+Stressed,Coding,4,Ambient Focus
+Stressed,Reading,3,Nature Sounds
+Stressed,Writing,2,White Noise
+Stressed,Exam Prep,3,White Noise
+Tired,Coding,2,Instrumental Jazz
+Tired,Reading,2,Classical Piano
+Tired,Writing,1,Classical Piano
+Tired,Exam Prep,3,Nature Sounds
+Motivated,Coding,9,Deep Focus Electronic
+Motivated,Reading,7,Lo-Fi Beats
+Motivated,Writing,8,Instrumental Jazz
+Motivated,Exam Prep,9,Ambient Focus
+Relaxed,Coding,5,Lo-Fi Beats
+Relaxed,Reading,4,Nature Sounds
+Relaxed,Writing,4,Classical Piano
+Relaxed,Exam Prep,5,Ambient Focus
