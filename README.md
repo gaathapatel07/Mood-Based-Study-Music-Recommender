@@ -76,4 +76,3 @@ python -m streamlit run app.py
 
 Gaatha Patel
 
-B.Tech Computer Science Engineering Student
