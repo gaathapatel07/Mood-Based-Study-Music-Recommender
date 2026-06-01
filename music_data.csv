@@ -1,21 +1,44 @@
-Mood,Task,Energy,Recommendation
-Happy,Coding,8,Deep Focus Electronic
-Happy,Reading,6,Lo-Fi Beats
-Happy,Writing,7,Instrumental Jazz
-Happy,Exam Prep,8,Ambient Focus
-Stressed,Coding,4,Ambient Focus
-Stressed,Reading,3,Nature Sounds
-Stressed,Writing,2,White Noise
-Stressed,Exam Prep,3,White Noise
-Tired,Coding,2,Instrumental Jazz
-Tired,Reading,2,Classical Piano
-Tired,Writing,1,Classical Piano
-Tired,Exam Prep,3,Nature Sounds
-Motivated,Coding,9,Deep Focus Electronic
-Motivated,Reading,7,Lo-Fi Beats
-Motivated,Writing,8,Instrumental Jazz
-Motivated,Exam Prep,9,Ambient Focus
-Relaxed,Coding,5,Lo-Fi Beats
-Relaxed,Reading,4,Nature Sounds
-Relaxed,Writing,4,Classical Piano
-Relaxed,Exam Prep,5,Ambient Focus
+Happy,Coding,9,Deep Focus Electronic
+Happy,Coding,7,Lo-Fi Beats
+Happy,Reading,8,Lo-Fi Beats
+Happy,Reading,5,Nature Sounds
+Happy,Writing,6,Instrumental Jazz
+Happy,Writing,8,Lo-Fi Beats
+Happy,Exam Prep,7,Ambient Focus
+Happy,Exam Prep,9,Deep Focus Electronic
+
+Stressed,Coding,3,Ambient Focus
+Stressed,Coding,2,White Noise
+Stressed,Reading,4,Nature Sounds
+Stressed,Reading,2,White Noise
+Stressed,Writing,3,Classical Piano
+Stressed,Writing,4,Nature Sounds
+Stressed,Exam Prep,4,Ambient Focus
+Stressed,Exam Prep,2,White Noise
+
+Tired,Coding,1,Classical Piano
+Tired,Coding,3,Instrumental Jazz
+Tired,Reading,1,Nature Sounds
+Tired,Reading,3,Classical Piano
+Tired,Writing,2,Nature Sounds
+Tired,Writing,3,Classical Piano
+Tired,Exam Prep,1,Nature Sounds
+Tired,Exam Prep,2,White Noise
+
+Motivated,Coding,10,Deep Focus Electronic
+Motivated,Coding,8,Deep Focus Electronic
+Motivated,Reading,8,Lo-Fi Beats
+Motivated,Reading,6,Ambient Focus
+Motivated,Writing,9,Instrumental Jazz
+Motivated,Writing,7,Lo-Fi Beats
+Motivated,Exam Prep,10,Ambient Focus
+Motivated,Exam Prep,8,Deep Focus Electronic
+
+Relaxed,Coding,4,Lo-Fi Beats
+Relaxed,Coding,6,Ambient Focus
+Relaxed,Reading,5,Nature Sounds
+Relaxed,Reading,6,Lo-Fi Beats
+Relaxed,Writing,5,Classical Piano
+Relaxed,Writing,6,Instrumental Jazz
+Relaxed,Exam Prep,4,Ambient Focus
+Relaxed,Exam Prep,6,Nature Sounds
