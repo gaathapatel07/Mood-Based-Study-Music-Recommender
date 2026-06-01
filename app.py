@@ -1,3 +1,30 @@
+import pandas as pd
+import streamlit as st
+from sklearn.preprocessing import LabelEncoder
+from sklearn.tree import DecisionTreeClassifier
+
+# Load dataset
+data = pd.read_csv("music_data.csv")
+
+# Create encoders
+mood_encoder = LabelEncoder()
+task_encoder = LabelEncoder()
+rec_encoder = LabelEncoder()
+
+# Encode columns
+data["Mood"] = mood_encoder.fit_transform(data["Mood"])
+data["Task"] = task_encoder.fit_transform(data["Task"])
+data["Recommendation"] = rec_encoder.fit_transform(
+    data["Recommendation"]
+)
+
+# Features and target
+X = data[["Mood", "Task", "Energy"]]
+y = data["Recommendation"]
+
+# Train model
+model = DecisionTreeClassifier(random_state=42)
+model.fit(X, y)
 # ==========================
 # PREMIUM UI
 # ==========================
