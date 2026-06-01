@@ -1,198 +1,107 @@
-import pandas as pd
-import streamlit as st
-from sklearn.preprocessing import LabelEncoder
-from sklearn.tree import DecisionTreeClassifier
+# ==========================
+# PREMIUM UI
+# ==========================
 
 st.markdown("""
 <style>
 
 .stApp{
-    background: linear-gradient(135deg,#0f172a,#111827);
+    background: #0B1120;
 }
 
 .main-title{
     text-align:center;
-    color:white;
-    font-size:3rem;
+    font-size:60px;
     font-weight:800;
-    margin-bottom:0px;
+    color:white;
 }
 
 .subtitle{
     text-align:center;
-    color:#94a3b8;
-    margin-bottom:30px;
+    color:#94A3B8;
+    font-size:18px;
+    margin-bottom:40px;
 }
 
-.music-card{
-    background: rgba(30,41,59,0.85);
+.card{
+    background:#111827;
+    padding:20px;
+    border-radius:18px;
+    border:1px solid #1F2937;
+}
+
+.result-card{
+    background:linear-gradient(135deg,#16A34A,#22C55E);
     padding:25px;
     border-radius:20px;
-    border:1px solid rgba(255,255,255,0.1);
-    backdrop-filter: blur(15px);
     text-align:center;
-    margin-top:20px;
-}
-
-.music-title{
-    color:#22c55e;
-    font-size:28px;
-    font-weight:bold;
-}
-
-.music-subtitle{
     color:white;
-    font-size:18px;
+}
+
+.tip-card{
+    background:#1E293B;
+    padding:20px;
+    border-radius:18px;
+    color:white;
 }
 
 .stButton>button{
     width:100%;
-    background:#22c55e;
-    color:white;
-    border:none;
+    height:55px;
     border-radius:12px;
-    height:3.2em;
+    background:#22C55E;
+    color:white;
     font-size:18px;
     font-weight:bold;
-}
-
-.stButton>button:hover{
-    background:#16a34a;
+    border:none;
 }
 
 </style>
 """, unsafe_allow_html=True)
-# -----------------------------
-# Page Configuration
-# -----------------------------
-st.set_page_config(
-    page_title="Mood-Based Study Music Recommender",
-    page_icon="🎧",
-    layout="centered"
-)
 
-# -----------------------------
-# Load Dataset
-# -----------------------------
-data = pd.read_csv("music_data.csv")
-
-# -----------------------------
-# Encode Data
-# -----------------------------
-mood_encoder = LabelEncoder()
-task_encoder = LabelEncoder()
-rec_encoder = LabelEncoder()
-
-data["Mood"] = mood_encoder.fit_transform(data["Mood"])
-data["Task"] = task_encoder.fit_transform(data["Task"])
-data["Recommendation"] = rec_encoder.fit_transform(
-    data["Recommendation"]
-)
-
-# -----------------------------
-# Features and Target
-# -----------------------------
-X = data[["Mood", "Task", "Energy"]]
-y = data["Recommendation"]
-
-# -----------------------------
-# Train Model
-# -----------------------------
-model = DecisionTreeClassifier(random_state=42)
-model.fit(X, y)
-
-# -----------------------------
-# Playlist Links
-# -----------------------------
-playlist_links = {
-    "Lo-Fi Beats":
-        "https://www.youtube.com/results?search_query=lofi+study+music",
-
-    "Ambient Focus":
-        "https://www.youtube.com/results?search_query=ambient+focus+music",
-
-    "Deep Focus Electronic":
-        "https://www.youtube.com/results?search_query=deep+focus+electronic",
-
-    "Classical Piano":
-        "https://www.youtube.com/results?search_query=classical+piano+study",
-
-    "Nature Sounds":
-        "https://www.youtube.com/results?search_query=nature+sounds+study",
-
-    "Instrumental Jazz":
-        "https://www.youtube.com/results?search_query=instrumental+jazz+study",
-
-    "White Noise":
-        "https://www.youtube.com/results?search_query=white+noise+focus"
-}
-
-# -----------------------------
-# UI
-# -----------------------------
 st.markdown(
-    """
-    <div class='main-title'>
-    🎧 Mood Music AI
-    </div>
-    """,
-    unsafe_allow_html=True
+"""
+<div class='main-title'>
+🎧 StudyFlow AI
+</div>
+""",
+unsafe_allow_html=True
 )
 
 st.markdown(
-    """
-    <div class='subtitle'>
-    Discover your perfect study soundtrack
-    </div>
-    """,
-    unsafe_allow_html=True
+"""
+<div class='subtitle'>
+Your AI Study Companion for Focus, Productivity & Music
+</div>
+""",
+unsafe_allow_html=True
 )
 
-st.markdown(
-    """
-    Find the perfect study music based on your mood,
-    task type, and energy level.
-    """
-)
+col1, col2, col3 = st.columns(3)
 
-st.divider()
+with col1:
+    mood = st.selectbox(
+        "😊 Mood",
+        ["Happy","Stressed","Tired","Motivated","Relaxed"]
+    )
 
-# Sidebar
-st.sidebar.header("About")
-st.sidebar.info(
-    """
-    This AI-powered recommendation system suggests
-    study music categories using Machine Learning.
+with col2:
+    task = st.selectbox(
+        "📚 Task",
+        ["Coding","Reading","Writing","Exam Prep"]
+    )
 
-    Built with:
-    - Python
-    - Scikit-Learn
-    - Streamlit
-    """
-)
-
-# Inputs
-mood = st.selectbox(
-    "😊 Select Mood",
-    ["Happy", "Stressed", "Tired", "Motivated", "Relaxed"]
-)
-
-task = st.selectbox(
-    "📚 Select Task",
-    ["Coding", "Reading", "Writing", "Exam Prep"]
-)
-
-energy = st.slider(
-    "⚡ Energy Level",
-    min_value=1,
-    max_value=10,
-    value=5
-)
+with col3:
+    energy = st.slider(
+        "⚡ Energy",
+        1,
+        10,
+        5
+    )
 
 st.write("")
 
-# Prediction
-if st.button("🎵 Recommend Music"):
+if st.button("🚀 Generate Study Plan"):
 
     mood_encoded = mood_encoder.transform([mood])[0]
     task_encoded = task_encoder.transform([task])[0]
@@ -205,23 +114,52 @@ if st.button("🎵 Recommend Music"):
         prediction
     )[0]
 
-    st.success(
-        f"🎧 Recommended Music Category: {recommendation}"
-    )
+    study_method = {
+        "Coding":"Deep Work",
+        "Reading":"Active Reading",
+        "Writing":"Flow Writing",
+        "Exam Prep":"Pomodoro"
+    }
 
     st.markdown(
-        f"### 🎶 Suggested Playlist"
+    f"""
+    <div class='result-card'>
+        <h2>🎵 {recommendation}</h2>
+        <p>Recommended Music Category</p>
+    </div>
+    """,
+    unsafe_allow_html=True
     )
 
-    st.markdown(
-        f"[Open Playlist Here]({playlist_links[recommendation]})"
+    st.write("")
+
+    c1,c2 = st.columns(2)
+
+    with c1:
+        st.markdown(
+        f"""
+        <div class='tip-card'>
+            <h3>📖 Study Method</h3>
+            <p>{study_method[task]}</p>
+        </div>
+        """,
+        unsafe_allow_html=True
+        )
+
+    with c2:
+        st.markdown(
+        f"""
+        <div class='tip-card'>
+            <h3>⏱ Recommended Session</h3>
+            <p>{20 + energy*5} Minutes</p>
+        </div>
+        """,
+        unsafe_allow_html=True
+        )
+
+    st.write("")
+
+    st.info(
+        f"💡 Based on your {mood.lower()} mood and {task.lower()} task, "
+        f"we recommend {recommendation.lower()} to maximize focus."
     )
-
-    st.balloons()
-
-# Footer
-st.divider()
-
-st.caption(
-    "Built using Machine Learning, Streamlit, and Scikit-Learn 🚀"
-)
