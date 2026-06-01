@@ -1,4 +1,4 @@
-Happy,Coding,9,Deep Focus Electronic
+Mood,Task,Energy,Recommendation
 Happy,Coding,7,Lo-Fi Beats
 Happy,Reading,8,Lo-Fi Beats
 Happy,Reading,5,Nature Sounds
@@ -35,7 +35,7 @@ Motivated,Exam Prep,10,Ambient Focus
 Motivated,Exam Prep,8,Deep Focus Electronic
 
 Relaxed,Coding,4,Lo-Fi Beats
-Relaxed,Coding,6,Ambient Focus
+Relaxed,Coding,6,Ambient Focusgit push
 Relaxed,Reading,5,Nature Sounds
 Relaxed,Reading,6,Lo-Fi Beats
 Relaxed,Writing,5,Classical Piano
