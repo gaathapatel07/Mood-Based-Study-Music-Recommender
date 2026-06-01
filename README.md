@@ -77,6 +77,6 @@ Output:
 
 Gaatha Patel
 
-B.Tech Computer Science Student
+
 
 Passionate about Machine Learning, Data Analytics, and Software Development.
