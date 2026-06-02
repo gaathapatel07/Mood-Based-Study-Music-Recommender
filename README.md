@@ -1,5 +1,5 @@
 # Mood-Based Study Music Recommender
-
+"Machine learning-powered recommendation system that analyzes mood, task type, and energy levels to deliver personalized study music for enhanced focus and productivity."
 ## Overview
 
 Mood-Based Study Music Recommender is a machine learning-based application that recommends suitable study music categories based on a user's mood, task type, and energy level. The objective is to improve focus and productivity by providing personalized music recommendations tailored to different study scenarios.
